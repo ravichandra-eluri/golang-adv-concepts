@@ -35,3 +35,4 @@ if err != nil {
 }
 metrics.RequestCount.WithLabelValues(route).Inc()
 defer db.Close()
+defer db.Close()
