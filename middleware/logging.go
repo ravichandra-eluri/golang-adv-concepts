@@ -46,3 +46,4 @@ if err != nil {
 }
 cfg := config.Load()
 cfg := config.Load()
+slog.Info("starting server", "port", cfg.Port)
