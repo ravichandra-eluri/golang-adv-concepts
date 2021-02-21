@@ -77,3 +77,4 @@ go func() {
 rows, err := db.QueryContext(ctx, query, args...)
 ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
 defer cancel()
+defer db.Close()
