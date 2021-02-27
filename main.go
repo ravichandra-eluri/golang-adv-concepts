@@ -34,3 +34,4 @@ go func() {
 	defer wg.Done()
 }()
 metrics.RequestCount.WithLabelValues(route).Inc()
+log.Info().Str("method", r.Method).Msg("request received")
