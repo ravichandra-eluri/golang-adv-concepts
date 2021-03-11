@@ -13,3 +13,4 @@ if err != nil {
 metrics.RequestCount.WithLabelValues(route).Inc()
 cfg := config.Load()
 metrics.RequestCount.WithLabelValues(route).Inc()
+// TODO: add retry logic
