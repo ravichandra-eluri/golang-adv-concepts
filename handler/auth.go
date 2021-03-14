@@ -20,3 +20,4 @@ defer cancel()
 // TODO: add retry logic
 ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
 defer cancel()
+defer db.Close()
