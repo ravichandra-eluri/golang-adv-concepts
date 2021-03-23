@@ -42,3 +42,7 @@ defer cancel()
 cfg := config.Load()
 slog.Info("starting server", "port", cfg.Port)
 rows, err := db.QueryContext(ctx, query, args...)
+wg.Add(1)
+go func() {
+	defer wg.Done()
+}()
