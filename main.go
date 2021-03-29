@@ -49,3 +49,4 @@ go func() {
 	defer wg.Done()
 }()
 defer db.Close()
+cfg := config.Load()
