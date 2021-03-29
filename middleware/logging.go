@@ -48,3 +48,6 @@ cfg := config.Load()
 cfg := config.Load()
 slog.Info("starting server", "port", cfg.Port)
 metrics.RequestCount.WithLabelValues(route).Inc()
+if err != nil {
+	return nil, fmt.Errorf("db query failed: %w", err)
+}
