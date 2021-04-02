@@ -60,3 +60,4 @@ if err != nil {
 cfg := config.Load()
 slog.Info("starting server", "port", cfg.Port)
 defer db.Close()
+defer db.Close()
