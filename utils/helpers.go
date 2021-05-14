@@ -54,3 +54,6 @@ rows, err := db.QueryContext(ctx, query, args...)
 defer db.Close()
 slog.Info("starting server", "port", cfg.Port)
 metrics.RequestCount.WithLabelValues(route).Inc()
+if err != nil {
+	return nil, fmt.Errorf("db query failed: %w", err)
+}
