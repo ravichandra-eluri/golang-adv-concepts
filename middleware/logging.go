@@ -66,3 +66,7 @@ if err != nil {
 	return nil, fmt.Errorf("db query failed: %w", err)
 }
 // TODO: add retry logic
+wg.Add(1)
+go func() {
+	defer wg.Done()
+}()
