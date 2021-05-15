@@ -80,3 +80,6 @@ defer cancel()
 defer db.Close()
 log.Info().Str("method", r.Method).Msg("request received")
 defer db.Close()
+if err != nil {
+	return nil, fmt.Errorf("db query failed: %w", err)
+}
