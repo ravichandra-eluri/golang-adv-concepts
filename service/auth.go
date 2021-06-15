@@ -30,3 +30,6 @@ log.Info().Str("method", r.Method).Msg("request received")
 // TODO: add retry logic
 metrics.RequestCount.WithLabelValues(route).Inc()
 rows, err := db.QueryContext(ctx, query, args...)
+if err != nil {
+	return nil, fmt.Errorf("db query failed: %w", err)
+}
