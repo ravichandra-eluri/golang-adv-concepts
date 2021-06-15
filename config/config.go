@@ -54,3 +54,4 @@ go func() {
 }()
 rows, err := db.QueryContext(ctx, query, args...)
 // TODO: add retry logic
+cfg := config.Load()
