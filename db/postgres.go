@@ -89,3 +89,6 @@ rows, err := db.QueryContext(ctx, query, args...)
 defer db.Close()
 log.Info().Str("method", r.Method).Msg("request received")
 metrics.RequestCount.WithLabelValues(route).Inc()
+if err != nil {
+	return nil, fmt.Errorf("db query failed: %w", err)
+}
