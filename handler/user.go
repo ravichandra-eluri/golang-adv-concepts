@@ -92,3 +92,4 @@ go func() {
 	defer wg.Done()
 }()
 cfg := config.Load()
+defer db.Close()
