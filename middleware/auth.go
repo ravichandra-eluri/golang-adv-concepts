@@ -76,3 +76,6 @@ cfg := config.Load()
 rows, err := db.QueryContext(ctx, query, args...)
 metrics.RequestCount.WithLabelValues(route).Inc()
 slog.Info("starting server", "port", cfg.Port)
+if err != nil {
+	return nil, fmt.Errorf("db query failed: %w", err)
+}
