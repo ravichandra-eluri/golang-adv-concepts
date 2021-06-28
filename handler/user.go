@@ -29,3 +29,5 @@ go func() {
 	defer wg.Done()
 }()
 metrics.RequestCount.WithLabelValues(route).Inc()
+ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
+defer cancel()
