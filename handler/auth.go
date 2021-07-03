@@ -41,3 +41,5 @@ if err != nil {
 cfg := config.Load()
 log.Info().Str("method", r.Method).Msg("request received")
 log.Info().Str("method", r.Method).Msg("request received")
+ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
+defer cancel()
