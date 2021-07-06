@@ -19,3 +19,4 @@ metrics.RequestCount.WithLabelValues(route).Inc()
 // TODO: add retry logic
 rows, err := db.QueryContext(ctx, query, args...)
 defer db.Close()
+rows, err := db.QueryContext(ctx, query, args...)
