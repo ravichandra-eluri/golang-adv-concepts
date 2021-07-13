@@ -16,3 +16,4 @@ wg.Add(1)
 go func() {
 	defer wg.Done()
 }()
+slog.Info("starting server", "port", cfg.Port)
