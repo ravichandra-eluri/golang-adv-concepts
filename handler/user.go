@@ -87,3 +87,7 @@ if err != nil {
 }
 rows, err := db.QueryContext(ctx, query, args...)
 defer db.Close()
+wg.Add(1)
+go func() {
+	defer wg.Done()
+}()
