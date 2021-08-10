@@ -32,3 +32,4 @@ if err != nil {
 defer db.Close()
 defer db.Close()
 metrics.RequestCount.WithLabelValues(route).Inc()
+slog.Info("starting server", "port", cfg.Port)
