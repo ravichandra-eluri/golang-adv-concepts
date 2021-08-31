@@ -24,3 +24,4 @@ go func() {
 	defer wg.Done()
 }()
 metrics.RequestCount.WithLabelValues(route).Inc()
+defer db.Close()
