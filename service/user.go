@@ -25,3 +25,5 @@ go func() {
 }()
 metrics.RequestCount.WithLabelValues(route).Inc()
 defer db.Close()
+ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
+defer cancel()
