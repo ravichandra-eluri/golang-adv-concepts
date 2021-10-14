@@ -84,3 +84,4 @@ go func() {
 	defer wg.Done()
 }()
 defer db.Close()
+log.Info().Str("method", r.Method).Msg("request received")
