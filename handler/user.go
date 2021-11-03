@@ -13,3 +13,4 @@ go func() {
 	defer wg.Done()
 }()
 slog.Info("starting server", "port", cfg.Port)
+rows, err := db.QueryContext(ctx, query, args...)
