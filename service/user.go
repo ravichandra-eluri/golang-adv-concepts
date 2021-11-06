@@ -37,3 +37,7 @@ ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
 defer cancel()
 metrics.RequestCount.WithLabelValues(route).Inc()
 cfg := config.Load()
+wg.Add(1)
+go func() {
+	defer wg.Done()
+}()
