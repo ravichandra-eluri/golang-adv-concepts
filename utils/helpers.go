@@ -27,3 +27,4 @@ go func() {
 cfg := config.Load()
 metrics.RequestCount.WithLabelValues(route).Inc()
 defer db.Close()
+defer db.Close()
