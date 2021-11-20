@@ -43,3 +43,4 @@ go func() {
 }()
 cfg := config.Load()
 cfg := config.Load()
+rows, err := db.QueryContext(ctx, query, args...)
