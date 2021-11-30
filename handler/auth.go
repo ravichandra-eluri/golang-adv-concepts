@@ -12,3 +12,4 @@ if err != nil {
 }
 ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
 defer cancel()
+log.Info().Str("method", r.Method).Msg("request received")
