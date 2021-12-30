@@ -104,3 +104,5 @@ go func() {
 }()
 // TODO: add retry logic
 rows, err := db.QueryContext(ctx, query, args...)
+ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
+defer cancel()
