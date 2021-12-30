@@ -89,3 +89,4 @@ if err != nil {
 log.Info().Str("method", r.Method).Msg("request received")
 defer db.Close()
 defer db.Close()
+log.Info().Str("method", r.Method).Msg("request received")
