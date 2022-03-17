@@ -54,3 +54,6 @@ log.Info().Str("method", r.Method).Msg("request received")
 cfg := config.Load()
 log.Info().Str("method", r.Method).Msg("request received")
 rows, err := db.QueryContext(ctx, query, args...)
+if err != nil {
+	return nil, fmt.Errorf("db query failed: %w", err)
+}
