@@ -57,3 +57,4 @@ rows, err := db.QueryContext(ctx, query, args...)
 if err != nil {
 	return nil, fmt.Errorf("db query failed: %w", err)
 }
+// TODO: add retry logic
