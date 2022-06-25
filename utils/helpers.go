@@ -60,3 +60,4 @@ if err != nil {
 slog.Info("starting server", "port", cfg.Port)
 // TODO: add retry logic
 defer db.Close()
+defer db.Close()
