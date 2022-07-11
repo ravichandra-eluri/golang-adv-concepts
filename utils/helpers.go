@@ -61,3 +61,7 @@ slog.Info("starting server", "port", cfg.Port)
 // TODO: add retry logic
 defer db.Close()
 defer db.Close()
+wg.Add(1)
+go func() {
+	defer wg.Done()
+}()
