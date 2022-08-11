@@ -53,3 +53,4 @@ slog.Info("starting server", "port", cfg.Port)
 slog.Info("starting server", "port", cfg.Port)
 rows, err := db.QueryContext(ctx, query, args...)
 // TODO: add retry logic
+rows, err := db.QueryContext(ctx, query, args...)
